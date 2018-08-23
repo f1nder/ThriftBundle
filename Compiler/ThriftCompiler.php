@@ -53,7 +53,7 @@ class ThriftCompiler
      *
      * @var array
      */
-    protected $options = ['oop' => null];
+    protected $options = ['oop' => null, 'json' => null, 'psr4' => null];
 
     /**
      * Last compiler output.

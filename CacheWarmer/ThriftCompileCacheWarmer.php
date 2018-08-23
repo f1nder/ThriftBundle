@@ -75,7 +75,7 @@ class ThriftCompileCacheWarmer
     {
         $compiler = new ThriftCompiler();
         $compiler->setExecPath($this->path);
-        $cacheDir = sprintf('%s/%s', $this->cacheDir, self::CACHE_SUFFIX);
+        $cacheDir = sprintf('%s/../%s', $this->cacheDir, self::CACHE_SUFFIX);
 
         // We compile for every Service
         foreach ($this->services as $config) {
@@ -106,15 +106,5 @@ class ThriftCompileCacheWarmer
                     );
             }
         }
-
-        // Check if thrift cache directory exists
-        $fs = new Filesystem();
-
-        if (!$fs->exists($cacheDir)) {
-            $fs->mkdir($cacheDir);
-        }
-
-        // Generate ClassMap
-        ClassMapGenerator::dump($cacheDir, sprintf('%s/classes.map', $cacheDir));
     }
 }

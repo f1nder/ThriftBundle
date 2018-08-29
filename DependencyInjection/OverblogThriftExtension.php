@@ -11,6 +11,7 @@
 
 namespace Overblog\ThriftBundle\DependencyInjection;
 
+use Overblog\ThriftBundle\CacheWarmer\ThriftCompileCacheWarmer;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
@@ -44,6 +45,19 @@ class OverblogThriftExtension extends Extension
         foreach ($config['clients'] as $name => $client) {
             $this->loadClient($name, $client, $container, $config['testMode']);
         }
+
+
+        $cacheDir = $container->getParameter('kernel.cache_dir');
+
+        $warmer = new ThriftCompileCacheWarmer(
+            $cacheDir,
+            $container->getParameter('kernel.root_dir'),
+            $container->getParameter('thrift.config.compiler.path'),
+            $container->getParameter('thrift.config.services')
+        );
+
+        $warmer->compile();
+
     }
 
     /**

@@ -11,6 +11,7 @@
 
 namespace Overblog\ThriftBundle\Server;
 
+use Overblog\ThriftBundle\PhpStream\TPhpStreamBase64;
 use Thrift\Transport\TBufferedTransport;
 use Thrift\Transport\TPhpStream;
 
@@ -26,7 +27,7 @@ class HttpServer extends Server
      */
     public function run()
     {
-        $transport = new TBufferedTransport(new TPhpStream(TPhpStream::MODE_R | TPhpStream::MODE_W));
+        $transport = new TBufferedTransport(new TPhpStreamBase64(TPhpStream::MODE_R | TPhpStream::MODE_W));
         $protocol = new $this->config['protocol']($transport, true, true);
 
         $transport->open();

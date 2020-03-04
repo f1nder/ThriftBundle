@@ -30,3 +30,18 @@ services:
     arguments: ['%thrift.config.servers%']
     tags:
       - { name: routing.loader, priority: 255 }
+
+  thrift.command.compile:
+    class: Overblog\ThriftBundle\Command\CompileCommand
+    tags:
+      - { name: console.command }
+
+  thrift.command.server:
+    class: Overblog\ThriftBundle\Command\ServerCommand
+    tags:
+      - { name: console.command }
+
+  thrift.command.client_test:
+    class: Overblog\ThriftBundle\Command\ClientTestCommand
+    tags:
+      - { name: console.command }

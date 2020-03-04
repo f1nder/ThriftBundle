@@ -26,8 +26,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('overblog_thrift_bundle');
+        $treeBuilder = new TreeBuilder('overblog_thrift_bundle');
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()

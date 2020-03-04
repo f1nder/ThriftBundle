@@ -12,13 +12,13 @@
 namespace Overblog\ThriftBundle\Command;
 
 use Overblog\ThriftBundle\Client\ThriftClient;
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ClientTestCommand extends ContainerAwareCommand
+class ClientTestCommand extends Command
 {
     protected function configure()
     {

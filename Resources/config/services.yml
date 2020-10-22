@@ -36,12 +36,12 @@ services:
     tags:
       - { name: console.command }
 
-    thrift.command.server:
-      class: Overblog\ThriftBundle\Command\ServerCommand
-      tags:
-        - { name: console.command }
+  thrift.command.server:
+    class: Overblog\ThriftBundle\Command\ServerCommand
+    tags:
+      - { name: console.command }
 
-    thrift.command.client_test:
-      class: Overblog\ThriftBundle\Command\ClientTestCommand
-      tags:
-        - { name: console.command }
+  thrift.command.client_test:
+    class: Overblog\ThriftBundle\Command\ClientTestCommand
+    tags:
+      - { name: console.command }

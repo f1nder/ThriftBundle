@@ -12,7 +12,7 @@
 namespace Overblog\ThriftBundle\Controller;
 
 use Overblog\ThriftBundle\Server\HttpServer;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -20,7 +20,7 @@ use Symfony\Component\HttpFoundation\Request;
  *
  * @author Xavier HAUSHERR
  */
-class ThriftController extends Controller
+class ThriftController extends AbstractController
 {
     /**
      * HTTP Entry point.

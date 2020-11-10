@@ -1,5 +1,5 @@
 {
-    "name": "fishly/thrift-bundle",
+    "name": "overblog-fishly/thrift-bundle",
     "description": "OverBlog Thrift Bundle",
     "homepage": "https://github.com/overblog/ThriftBundle.git",
     "type": "symfony-bundle",

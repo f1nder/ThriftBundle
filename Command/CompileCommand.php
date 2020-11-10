@@ -13,7 +13,6 @@ namespace Overblog\ThriftBundle\Command;
 
 use Overblog\ThriftBundle\CacheWarmer\ThriftCompileCacheWarmer;
 use Overblog\ThriftBundle\Compiler\ThriftCompiler;
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
